@@ -24,7 +24,7 @@ stages {
     }
   }
 }
-stage('Push Image') {
+/*stage('Push Image') {
 	steps {
 		script { 
 			docker.withRegistry('','dockerhub') {
@@ -42,6 +42,14 @@ stage('Push Image') {
 	 }
     } 
 }
-}
+}*/
+stage('DEPLOY IMAGE') {
+	steps {
+		withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s-config', namespace: '', serverUrl: '') {
+			sh 'kubectl apply -f springboot-lb.yaml'
+	   }
+ 
+	}
+  }
 }
 }
