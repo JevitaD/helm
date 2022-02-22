@@ -33,5 +33,15 @@ stage('Push Image') {
 		}
 	}
  }
+	
+ stage('DEPLOY IMAGE') {
+  steps {
+    script { 
+	docker.withRegistry( '','dockerhub' ) { 
+	  dockerImage.run('-it --name "container-$dockerTag"') 
+	 }
+    } 
+}
+}
 }
 }
