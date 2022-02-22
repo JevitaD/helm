@@ -1,4 +1,7 @@
 pipeline{
+environment{
+version = "Version_$BUILD_NUMBER"
+}
 agent {
   label 'docker'
 }
@@ -14,6 +17,10 @@ stages {
        sh 'mvn -f MyAwesomeApp/pom.xml clean install'  
     }
   }
-
+ stage('Build Image') {
+  steps {
+    dockerImage = docker.build("jevi17/myreponode:$version","MyAwesomeApp")
+  }
+}
 }
 }
