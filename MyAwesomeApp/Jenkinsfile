@@ -12,7 +12,7 @@ stages {
     }
   }
 
-  stage('Build') {
+  /*stage('Build') {
     steps {
        sh 'mvn -f MyAwesomeApp/pom.xml clean install'  
     }
@@ -45,9 +45,9 @@ stages {
 }*/
 stage('DEPLOY IMAGE') {
 	steps {
-		withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s-config', namespace: '', serverUrl: '') {
+		/*withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s-config', namespace: '', serverUrl: '') {*/
 			sh 'kubectl apply -f MyAwesomeApp/springboot-lb.yaml'
-	   }
+	/*   }*/
  
 	}
   }
