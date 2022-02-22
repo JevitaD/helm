@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: ananthkannan/myspringbootapp
-  tag: latest
+  repository: jevi17/myreponode
+  tag: version_15
   pullPolicy: Always
 
 imagePullSecrets: []
