@@ -27,7 +27,7 @@ stages {
 stage('Push Image') {
 	steps {
 		script { 
-			withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com') {
+			docker.witRegistry('','dockerhub') {
 				dockerImage.push() 
 			}
 		}
