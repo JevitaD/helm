@@ -46,7 +46,7 @@ stages {
 stage('DEPLOY IMAGE') {
 	steps {
 		withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s-config', namespace: '', serverUrl: '') {
-			sh 'kubectl apply -f springboot-lb.yaml'
+			sh 'kubectl apply -f MyAwesomeApp/springboot-lb.yaml'
 	   }
  
 	}
