@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-angular-app
-        image: akdevopscoaching/mywebapp:latest
+        image: jevi17/myreponode:Version_15
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
