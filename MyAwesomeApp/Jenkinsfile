@@ -19,7 +19,9 @@ stages {
   }
  stage('Build Image') {
   steps {
+    script{
     dockerImage = docker.build("jevi17/myreponode:$version","MyAwesomeApp")
+  }
   }
 }
 }
