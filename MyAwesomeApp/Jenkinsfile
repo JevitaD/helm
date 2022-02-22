@@ -52,11 +52,13 @@ stage('DEPLOY IMAGE') {
 	}
   }*/
 stage ('Kubernetes Deploy') {
+	steps{
         kubernetesDeploy(
             configs: 'MyAwesomeApp/springboot-lb.yml',
             kubeconfigId: 'k8s-config',
             enableConfigSubstitution: true
             )
+	}
     }
 }
 }
