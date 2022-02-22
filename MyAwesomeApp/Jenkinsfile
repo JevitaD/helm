@@ -20,9 +20,18 @@ stages {
  stage('Build Image') {
   steps {
     script{
-    dockerImage = docker.build("jevi17/myreponode:$version","MyAwesomeApp")
-  }
+      dockerImage = docker.build("jevi17/myreponode:$version","MyAwesomeApp")
+    }
   }
 }
+stage('Push Image') {
+	steps {
+		script { 
+			withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/repository/docker/jevi17/myreponode') {
+				dockerImage.push() 
+			}
+		}
+	}
+ }
 }
 }
