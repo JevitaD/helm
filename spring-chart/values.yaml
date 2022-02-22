@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: jevi17/myreponode
-  tag: version_15
+  tag: Version_15
   pullPolicy: Always
 
 imagePullSecrets: []
