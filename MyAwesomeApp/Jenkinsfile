@@ -38,7 +38,7 @@ stage('Push Image') {
   steps {
     script { 
 	docker.withRegistry( '','dockerhub' ) { 
-	  dockerImage.run('-it --name "container-$dockerTag"') 
+	  dockerImage.run('-it -p 8085:8085 --name "container-$dockerTag"') 
 	 }
     } 
 }
