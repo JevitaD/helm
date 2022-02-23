@@ -16,14 +16,14 @@ stages {
     steps {
        sh 'mvn -f MyAwesomeApp/pom.xml clean install'  
     }
-  }
+  }*/
  stage('Build Image') {
   steps {
     script{
       dockerImage = docker.build("jevi17/myreponode:$version","MyAwesomeApp")
     }
   }
-}
+}/*
 stage('Push Image') {
 	steps {
 		script { 
