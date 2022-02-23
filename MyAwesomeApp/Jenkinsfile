@@ -8,11 +8,11 @@ agent {
 stages {
   stage('Checkout') {
     steps {
-     checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/JevitaD/CICD.git']]])
+     git 'https://github.com/JevitaD/helm.git'
     }
   }
 
-  /*stage('Build') {
+  stage('Build') {
     steps {
        sh 'mvn -f MyAwesomeApp/pom.xml clean install'  
     }
@@ -24,7 +24,7 @@ stages {
     }
   }
 }
-/*stage('Push Image') {
+stage('Push Image') {
 	steps {
 		script { 
 			docker.withRegistry('','dockerhub') {
@@ -42,7 +42,7 @@ stages {
 	 }
     } 
 }
-}*/
+}/*
 stage('DEPLOY IMAGE') {
 	steps {
 		/*withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s-config', namespace: '', serverUrl: '') {*/
@@ -52,15 +52,6 @@ stage('DEPLOY IMAGE') {
 	}
   }
   /*
-stage ('Kubernetes Deploy') {
-	
-        kubernetesDeploy(
-            configs: 'MyAwesomeApp/springboot-lb.yml',
-            kubeconfigId: 'k8s-config',
-            enableConfigSubstitution: true
-            )
-	
-    }
-    */
+
 }
 }
