@@ -33,7 +33,7 @@ stage('Push Image') {
 		}
 	}
  }
-*/	
+/*	
  stage('DEPLOY IMAGE') {
   steps {
     script { 
@@ -42,7 +42,7 @@ stage('Push Image') {
 	 }
     } 
   }
-}
+}*/
  stage('Deploying using Helm') {
   steps {
     script { 
