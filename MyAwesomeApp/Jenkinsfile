@@ -43,6 +43,12 @@ stage('Push Image') {
     } 
   }
 }
-
+ stage('Deploying using Helm') {
+  steps {
+    script { 
+	sh ' helm install sphelm springhelm '  
+    } 
+  }
+}
 }
 }
