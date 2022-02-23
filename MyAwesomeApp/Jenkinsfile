@@ -11,7 +11,7 @@ stages {
      git 'https://github.com/JevitaD/helm.git'
     }
   }
-
+/*
   stage('Build') {
     steps {
        sh 'mvn -f MyAwesomeApp/pom.xml clean install'  
@@ -33,12 +33,12 @@ stage('Push Image') {
 		}
 	}
  }
-	
+*/	
  stage('DEPLOY IMAGE') {
   steps {
     script { 
 	docker.withRegistry( '','dockerhub' ) { 
-	  dockerImage.run('-it -p 8085:8085 --name "container-$version"') 
+	  dockerImage.run('-it -p 8080:8085 --name "container-$version"') 
 	 }
     } 
   }
