@@ -41,17 +41,8 @@ stage('Push Image') {
 	  dockerImage.run('-it -p 8085:8085 --name "container-$version"') 
 	 }
     } 
-}
-}/*
-stage('DEPLOY IMAGE') {
-	steps {
-		/*withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s-config', namespace: '', serverUrl: '') {*/
-			/* sh 'kubectl apply -f MyAwesomeApp/springboot-lb.yaml' */
-	/*   }*/
- 
-	}
   }
-  */
+}
 
 }
 }
